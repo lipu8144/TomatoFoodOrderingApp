@@ -1,0 +1,5 @@
+steps
+1. create vite@latest , initalize react app and structure the files like: create componets, pages, folder etc.
+2. install tailwind css and setup it.
+3. create navbar componet at componets folder
+4.

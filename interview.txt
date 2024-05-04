@@ -1,0 +1,2 @@
+Q1. use of box-sizing: border-box
+q2. what is useContext : you can have multiple components and they can talk to eachother, they can share  state without having to put out components throw props. avoid prop driling

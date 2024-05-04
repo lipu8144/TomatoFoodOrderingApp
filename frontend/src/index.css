@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Outfit";
+  src: url(./assets/font/Outfit-VariableFont_wght.ttf);
+}
+
+@layer components{
+  *{
+    @apply m-0 p-0 box-border font-outfit scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+
+  a {
+    @apply text-inherit;
+  }
+
+  .n-active {
+    @apply pb-[2px] border-solid border-b-[2px] border-b-[#49557e] 
+  }
+  .x-active {
+    border: 4px solid tomato;
+    padding: 2px;
+  }
+
+  .explore-menu-list::-webkit-scrollbar{
+    display: none;
+  }
+  
+}
+/* 
+
+a{
+  text-decoration: none;
+  color: inherit;
+} */
