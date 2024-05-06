@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {assets} from "../assets/frontend_assets/assets"
 import { Link } from "react-router-dom";
+import { StoreContext } from "../main";
 
 const NavBar = ({ setShowLogin }) => {
-  const [menu, setMenu] = useState("menu");
+  const [menu, setMenu] = useState("home");
+
+  const { getTotalCartAmount } = useContext(StoreContext);
 
   return (
-    <div className="navbar px-0 py-5 flex justify-between items-center">
+    <div className="navbar px-0 py-5 flex justify-between items-center sticky top-0 z-20 bg-white">
+      <Link to="/">
       <img src={assets.logo} alt="" className="logo md:w-36 w-28" />
+      </Link>
       <ul className="navbar-menu md:flex hidden list-none gap-5 text-[#49557e] md:text-xl text-base capitalize font-outfit cursor-pointer">
         <Link
-          to={"/"}
+          to="/"
           onClick={(e) => setMenu("home")}
           className={menu === "home" ? "n-active" : ""}
         >
@@ -41,8 +46,10 @@ const NavBar = ({ setShowLogin }) => {
       <div className="navbar-right flex items-center md:gap-10 gap-5">
         <img src={assets.search_icon} alt="" className="w-[20px]" />
         <div className="navbar-search-icon relative">
+          <Link to="/cart">
           <img src={assets.basket_icon} alt="" className="w-[20px]" />
-          <div className="dot absolute min-w-2 min-h-2 rounded -top-2 -right-2 bg-[#FF574A]"></div>
+          </Link>
+          <div className={getTotalCartAmount() === 0 ? "" :"absolute min-w-2 min-h-2 rounded -top-2 -right-2 bg-[#FF574A]"}></div>
         </div>
         <button onClick={()=>setShowLogin(true)} className="md:text-xl text-base bg-transparent text-[#49557e] border border-solid border-[#FF574A] md:py-[10px] py-[7px] md:px-[30px] px-[20px] rounded-3xl cursor-pointer transition-[.3s] hover:bg-[#fff4f2]">
           sign in

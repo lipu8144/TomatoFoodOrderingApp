@@ -21,6 +21,18 @@ const StoreContextProvider = ({children}) =>{
         setCartItems((prev)=> ({...prev,[itemId]:prev[itemId] - 1}))
     }
 
+
+    const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        for(const item in cartItems){
+            if(cartItems[item] > 0){
+                let iteminfo = food_list.find((product)=> product._id === item);
+                totalAmount += iteminfo.price * cartItems[item]
+            }
+        }
+        return totalAmount;
+    }
+
     useEffect(()=>{
         console.log(cartItems)
     },[cartItems])
@@ -30,7 +42,9 @@ const StoreContextProvider = ({children}) =>{
         cartItems,
         setCartItems,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        getTotalCartAmount
+
     }
 
     return (
