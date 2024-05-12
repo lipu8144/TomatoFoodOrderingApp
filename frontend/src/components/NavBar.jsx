@@ -90,7 +90,7 @@ const NavBar = ({ setShowLogin }) => {
                   : "hidden"
               } `}
             >
-              <li className="flex items-center gap-2 cursor-pointer hover:text-[#ff574a]">
+              <li onClick={()=>navigate('/myorders')} className="flex items-center gap-2 cursor-pointer hover:text-[#ff574a]">
                 <img className="w-[20px]" src={assets.bag_icon} alt="" />
                 <p>Orders</p>
               </li>

@@ -15,7 +15,8 @@ export default {
       }
     },
     animation: {
-      'fadeIn-Anim': "fadeIn 3s"
+      'fadeIn-Anim': "fadeIn 3s",
+      'rotate': ""
     }
   },
   plugins: [],
