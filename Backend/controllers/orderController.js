@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECERET_KEY);
 const placeOrder = async(req,res) =>{
 
     const frontend_url =
-      "https://tomato-food-ordering-app-client-f7k2e4y7p.vercel.app/";
+      "http://localhost:5173";
 
     try {
         const newOrder = new orderModel({
