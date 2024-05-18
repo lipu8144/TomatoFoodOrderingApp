@@ -3,7 +3,9 @@ import img from "../assets/frontend_assets/header_img.png";
 
 const Header = () => {
   return (
-    <div className={`header h-[34vw] my-[30px] mx-auto bg-[url(./header_img.png)] bg-no-repeat bg-contain relative`}>
+    <div
+      className={`header h-[34vw] my-[30px] mx-auto bg-custom-image bg-no-repeat bg-contain relative`}
+    >
       <div className="header-contents absolute flex flex-col gap-[1.5vw] md:max-w-[50%] max-w-[65%] bottom-[10%] left-[6vw] items-start animate-fadeIn-Anim ">
         <h2 className="text-white font-medium text-[max(4.5vw,22px)]">
           Order your favourite food here
